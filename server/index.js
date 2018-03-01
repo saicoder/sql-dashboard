@@ -6,8 +6,12 @@ const dbConnector = require('./db_connector')
 let __config = null
 const getConfig = () => {
   if (__config) return __config
-  
-  const data = fs.readFileSync('./config.json', { encoding: 'utf8' })
+
+  let data = null
+
+  if (process.env.SD_CONFIG) data = process.env.SD_CONFIG
+  else data = fs.readFileSync('./config.json', { encoding: 'utf8' })
+
   const config = JSON.parse(data)
   
   if (process.env.NODE_ENV == 'production') __config = config
