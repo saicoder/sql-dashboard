@@ -1,0 +1,16 @@
+{
+  "name": "sql_dashboard",
+  "version": "1.0.0",
+  "description": "Easy dashboards for SQL databases",
+  "main": "index.js",
+  "author": "Branko Krstic<saicoder.net@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/",
+    "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}

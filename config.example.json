@@ -1,0 +1,32 @@
+{
+  "database": "mysql",
+  "dbConfig": {
+    "host": "host",
+    "user": "user",
+    "password": "pass",
+    "database": "db"
+  },
+  "widgets": [
+    {
+      "type": "number",
+      "width": 2,
+      "name": "Total Users",
+      "query": "SELECT COUNT(*) FROM users;",
+      "reload": 10
+    },
+    {
+      "type": "line-chart",
+      "width": 12,
+      "name": "Users Per Month",
+      "query": "SELECT count(*) as count, DATE_FORMAT(created_at, '%Y-%m') as date FROM users GROUP BY YEAR(created_at), MONTH(created_at)"
+    },
+    {
+      "type": "table",
+      "width": 6,
+      "name": "Newest Users",
+      "query_ex": "SHOW COLUMNS FROM users",
+      "query": "SELECT first_name, last_name, email from users ORDER BY id DESC  LIMIT 5",
+      "reload": 30
+    }
+  ]
+}
