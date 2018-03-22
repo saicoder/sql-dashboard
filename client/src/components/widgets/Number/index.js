@@ -1,5 +1,4 @@
 import React from 'react'
-import Card from '../../Card'
 
 const getNumber = (data = []) => {
   const row = data[0]
@@ -12,7 +11,5 @@ const getNumber = (data = []) => {
 }
 
 export default ({ data, widget }) => (
-  <Card title={widget.name || 'Unnamed Widget'}>
-    <div style={{ fontSize: '3em', textAlign: 'center' }}>{getNumber(data)}</div>
-  </Card>
+  <div style={{ fontSize: '3em', textAlign: 'center', padding: '20px 5px 20px 5px' }}>{getNumber(data)}</div>
 )

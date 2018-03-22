@@ -1,6 +1,5 @@
 import React from 'react'
 import { Table } from 'antd'
-import Card from '../../Card'
 
 
 const formatTitle = (text) => {
@@ -25,7 +24,5 @@ const getDynamicColums = (data) => {
 
 
 export default ({ data, widget }) => (
-  <Card title={widget.name || 'Unnamed Widget'} bordered={false} bodyStyle={{ padding: 0 }}>
-    <Table dataSource={data} columns={getDynamicColums(data)} pagination={data && data.length > 10}/>
-  </Card>
+  <Table dataSource={data} columns={getDynamicColums(data)} pagination={data && data.length > 10}/>
 )

@@ -1,0 +1,24 @@
+
+.App__widgets{
+  margin: 0 30px 30px 30px;
+}
+
+.App__widgets.loading{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.App__widgets .title{
+  margin: 20px 12px 10px 12px;
+  font-size: 1.3em;
+  color: #aaa;
+  font-weight: 100;
+}
+
+.App__widgets:before, 
+.App__widgets:after{
+  content:"";
+  display: table ;
+  clear:both;
+}
